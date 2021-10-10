@@ -5,10 +5,13 @@ import Home from './Components/Home/Home';
 import Register from './Components/Register/Register';
 import Login from './Components/Header/Login/Login';
 import Header from './Components/Header/Header';
+import AuthProvider from './Context/AuthProvider';
+import Shipping from './Components/Shipping/Shipping';
 
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
       <BrowserRouter>
       <Header></Header>
         <Switch>
@@ -24,8 +27,12 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
+          <Route path="/shipping">
+            <Shipping></Shipping>
+          </Route>
         </Switch>
       </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
