@@ -7,6 +7,8 @@ import Login from './Components/Header/Login/Login';
 import Header from './Components/Header/Header';
 import AuthProvider from './Context/AuthProvider';
 import Shipping from './Components/Shipping/Shipping';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
 
 function App() {
   return (
@@ -27,9 +29,12 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/shipping">
+          <PrivateRoute path ="/placeorder">
+            <PlaceOrder></PlaceOrder>
+          </PrivateRoute>
+          <PrivateRoute path="/shipping">
             <Shipping></Shipping>
-          </Route>
+          </PrivateRoute>
         </Switch>
       </BrowserRouter>
       </AuthProvider>
